@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 from decouple import config
 
+EMAIL_BACKEND = 'django.core.mail.backend.console.EmailBackend'
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = '1025'
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -42,6 +46,7 @@ INSTALLED_APPS = [
     'accounts',  # Your custom accounts app
     'rest_framework',  # For REST API support
     'rest_framework.authtoken',  # For token-based authentication
+    'passwordManagementApi.apps.PasswordmanagementapiConfig',
 ]
 
 # Add the AUTH_USER_MODEL setting here
